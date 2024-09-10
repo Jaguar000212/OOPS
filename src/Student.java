@@ -3,8 +3,22 @@ public class Student {
     int rollNo;
 
     Student(String name, int rollNo) {
-        this.name = name;
-        this.rollNo = rollNo;
+        try {
+            if (name == null || name.isEmpty()) {
+                throw new Exception("Name cannot be empty");
+            }
+            if (rollNo <= 0) {
+                throw new NoNegativeException("Roll No cannot be less than or equal to 0");
+            }
+            this.name = name;
+            this.rollNo = rollNo;
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+    public void speak(){
+        System.out.println("Hello");
+        return;
     }
 }
 
@@ -20,4 +34,5 @@ class II_Year extends Student {public
         System.out.println("Roll No : " + this.rollNo);
         System.out.println("Project : " + this.project);
     }
+
 }
