@@ -1,7 +1,5 @@
 //import java.util.Scanner;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
         System.Logger logger = System.getLogger(Main.class.getName());
@@ -18,14 +16,38 @@ public class Main {
 
 //        II_Year student = new II_Year(null, -35, "Android");
 //        student.displayDetails();
-        BankAccount account = new BankAccount("000212", "Shryansh");
-        account.deposit(1000);
-        try {
-            account.withdraw(500);
-            account.withdraw(1000);
-        } catch (InsufficientFundsException e) {
-//            System.err.println(e.getMessage());
-            logger.log(System.Logger.Level.valueOf("ERROR"), e.getMessage());
-        }
+//        BankAccount account = new BankAccount("000212", "Shryansh");
+//        account.deposit(1000);
+//        try {
+//            account.withdraw(500);
+//            account.withdraw(1000);
+//        } catch (InsufficientFundsException e) {
+////            System.err.println(e.getMessage());
+//            logger.log(System.Logger.Level.valueOf("ERROR"), e.getMessage());
+//        }
+
+//        A a = new A();
+//        B b = new B();
+//        C c = new C();
+//        a.run();
+//        b.run();
+//        c.run();
+
+        A a = new A();
+        B b = new B();
+        a.setPriority(Thread.MAX_PRIORITY);
+        b.setPriority(Thread.MIN_PRIORITY);
+        a.start();
+        b.start();
+//        try {
+//            Thread.sleep(1000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+//        a.stopThread();
+//        b.stopThread();
+//
+//        System.out.println(a.count + " " + b.count + " " + (b.count - a.count));
     }
+//    579612202 585993964
 }
